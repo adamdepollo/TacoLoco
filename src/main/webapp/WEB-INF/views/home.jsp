@@ -51,25 +51,6 @@
 		</form>
 	</div>
 	<script> 
-	$("input[type='number']").val('0');
-		 /*
-	    var formData = {
-	      veggieTacos: $("#veggieTacos").val(),
-	      chickenTacos: $("#chickenTacos").val(),
-	      beefTacos: $("#beefTacos").val(),
-	      chorizoTacos: $("#chorizoTacos").val(),
-	    };
-
-	    $.ajax({
-	      type: "POST",
-	      url: "/getTotal",
-	      data: JSON.stringify(formData),
-	      dataType: "json",
-	      encode: true,
-	    }).done(function (data) {
-	      console.log(data);
-	    }); 
-		console.log("posted"); */
-	/* }); */
+		$("input[type='number']").val('0');
 	</script>	
 </body>

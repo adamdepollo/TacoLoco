@@ -19,6 +19,5 @@
 		<hr>
 		<h4>Your total is:</h4>
 		<span>$</span><span>${order.getTotal()}</span>
-		<p>Veggie tacos ...... ${order.getVeggieTacos()}</p>
 	</div>
 </body>
