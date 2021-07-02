@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class Order {
-	
+
 	private Integer veggieTacos;
 	private Integer chickenTacos;
 	private Integer beefTacos;
 	private Integer chorizoTacos;
 	private String total;
-	
+
 	public Order(Integer veggieTacos, Integer chickenTacos, Integer beefTacos, Integer chorizoTacos) {
 		this.veggieTacos = veggieTacos;
 		this.chickenTacos = chickenTacos;
@@ -18,13 +18,17 @@ public class Order {
 		this.chorizoTacos = chorizoTacos;
 		setTotal();
 	}
-	
+
 	public void setTotal() {
 		BigDecimal subtotal = new BigDecimal(getVeggieSubotal() + getBeefAndChickenSubtotal() + getChorizoSubtotal());
 		if (orderSize() >= 4) {
 			subtotal = applyDiscount(subtotal);
 		}
-		this.total = subtotal.setScale(2, RoundingMode.HALF_UP).toString();
+		this.total = roundToTwoDecimals(subtotal);
+	}
+
+	private String roundToTwoDecimals(BigDecimal subtotal) {
+		return subtotal.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	private BigDecimal applyDiscount(BigDecimal subtotal) {
@@ -46,7 +50,7 @@ public class Order {
 	private int getBeefAndChickenSubtotal() {
 		return 3 * (chickenTacos + beefTacos);
 	}
-	
+
 	public Integer getVeggieTacos() {
 		return veggieTacos;
 	}
