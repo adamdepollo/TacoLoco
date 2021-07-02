@@ -1,6 +1,7 @@
 $("input[type='number']").val('0');
+
 $("#totalDisplay").hide();
-$("#error").hide();
+
 $("#orderForm").submit(function (event) {
     var formData = {
       veggieTacos: $("#veggieTacos").val(),
@@ -22,4 +23,8 @@ $("#orderForm").submit(function (event) {
     });
 
     event.preventDefault();
+  });
+  
+  $("#newOrder").click(function() {
+  	location.reload();
   });
